@@ -7,13 +7,14 @@
 <meta name="description" content="Página ligera de PatoNuclear para acceder a recursos permitidos relacionados con Minecraft Bedrock 26.45.">
 <style>
 :root{
-  --bg:#08141e;
-  --card:#102334;
-  --text:#f7fbff;
-  --muted:#b8c6d1;
-  --cyan:#35c7ff;
-  --green:#75ed86;
-  --line:rgba(255,255,255,.09);
+  --bg: #fdf8f2;
+  --card: #ffffff;
+  --text: #2c221e;
+  --muted: #786960;
+  --orange: #ff7e36;
+  --amber: #ffb020;
+  --accent: #e05d14;
+  --line: rgba(180, 120, 80, 0.15);
 }
 *{box-sizing:border-box}
 html,body{min-height:100%}
@@ -26,18 +27,18 @@ body{
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   color:var(--text);
   background:
-    radial-gradient(circle at 15% 20%,rgba(53,199,255,.15),transparent 26%),
-    radial-gradient(circle at 85% 15%,rgba(117,237,134,.10),transparent 24%),
-    linear-gradient(180deg,#06101a,var(--bg));
+    radial-gradient(circle at 15% 20%, rgba(255, 160, 102, 0.18), transparent 35%),
+    radial-gradient(circle at 85% 85%, rgba(255, 200, 100, 0.22), transparent 35%),
+    linear-gradient(180deg, #fffaf5, var(--bg));
 }
 .card{
   width:min(720px,100%);
-  padding:24px;
+  padding:28px 24px;
   border-radius:26px;
   text-align:center;
-  background:rgba(16,35,52,.95);
+  background:var(--card);
   border:1px solid var(--line);
-  box-shadow:0 22px 55px rgba(0,0,0,.34);
+  box-shadow:0 18px 45px rgba(180, 90, 30, 0.08);
 }
 .brand{
   display:flex;
@@ -51,17 +52,19 @@ body{
   display:grid;place-items:center;
   border-radius:17px;
   font-size:31px;
-  background:linear-gradient(135deg,#ffe34e,#ff9f1a);
+  background:linear-gradient(135deg, #ffe34e, #ff9f1a);
+  box-shadow:0 4px 12px rgba(255, 159, 26, 0.25);
 }
 .brand strong{
   font-size:30px;
   letter-spacing:-.03em;
+  color:var(--text);
 }
 .game{
   padding:22px 16px;
-  border:1px solid rgba(53,199,255,.20);
+  border:1px solid rgba(255, 126, 54, 0.2);
   border-radius:22px;
-  background:linear-gradient(180deg,rgba(53,199,255,.08),rgba(117,237,134,.04));
+  background:linear-gradient(180deg, rgba(255, 243, 235, 0.7), rgba(255, 248, 238, 0.5));
 }
 .game-icon{
   font-size:52px;
@@ -72,16 +75,28 @@ h1{
   font-size:clamp(28px,6vw,46px);
   letter-spacing:-.04em;
   line-height:1.02;
+  color:var(--text);
 }
 .version{
   display:inline-block;
-  margin:10px 0 22px;
-  padding:8px 14px;
+  margin:10px 0 14px;
+  padding:8px 16px;
   border-radius:999px;
-  background:rgba(53,199,255,.11);
-  border:1px solid rgba(53,199,255,.22);
+  background:rgba(255, 126, 54, 0.12);
+  border:1px solid rgba(255, 126, 54, 0.25);
   font-weight:800;
-  color:#d9f5ff;
+  color:var(--accent);
+}
+.update-info{
+  margin:0 auto 20px;
+  max-width:480px;
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.4;
+  background:rgba(255, 255, 255, 0.7);
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px dashed rgba(255, 126, 54, 0.25);
 }
 .btn{
   display:flex;
@@ -95,9 +110,14 @@ h1{
   text-decoration:none;
   font-size:20px;
   font-weight:950;
-  color:#041015;
-  background:linear-gradient(135deg,var(--cyan),var(--green));
-  box-shadow:0 14px 32px rgba(53,199,255,.24);
+  color:#ffffff;
+  background:linear-gradient(135deg, var(--orange), var(--amber));
+  box-shadow:0 12px 28px rgba(255, 126, 54, 0.3);
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 32px rgba(255, 126, 54, 0.38);
 }
 .small{
   margin:14px 0 0;
@@ -115,9 +135,10 @@ h1{
   min-width:92px;
   padding:10px 12px;
   border:1px solid var(--line);
-  background:rgba(255,255,255,.035);
+  background:rgba(255, 248, 242, 0.6);
   border-radius:14px;
   font-size:13px;
+  color:var(--text);
 }
 .icon b{
   display:block;
@@ -126,7 +147,7 @@ h1{
 }
 footer{
   margin-top:18px;
-  color:#91a4b3;
+  color:var(--muted);
   font-size:12px;
 }
 @media(max-width:500px){
@@ -146,6 +167,10 @@ footer{
     <div class="game-icon">⛏️</div>
     <h1>EL JUEGO</h1>
     <div class="version">26.45 · Android</div>
+
+    <p class="update-info">
+      ✨ <strong>Novedades v26.45:</strong> Optimización de rendimiento, corrección de errores y mejoras de estabilidad general.
+    </p>
 
     <a class="btn" href="https://subtounlock.app/u/paton2645" target="_blank" rel="noopener noreferrer">
       ⬇️ CLICK AQUI

@@ -3,190 +3,448 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>EL JUEGO en la VERSION 26.45 | PatoNuclear</title>
+
 <meta name="description" content="Página ligera de PatoNuclear para acceder a recursos permitidos relacionados con Minecraft Bedrock 26.45.">
+
 <style>
 :root{
-  --bg: #fdf8f2;
-  --card: #ffffff;
-  --text: #2c221e;
-  --muted: #786960;
-  --orange: #ff7e36;
-  --amber: #ffb020;
-  --accent: #e05d14;
-  --line: rgba(180, 120, 80, 0.15);
+  --bg-dark:#111214;
+  --bg-dark-2:#1b1d20;
+
+  --card:#fffaf4;
+  --card-2:#fffdf9;
+
+  --text:#2b211d;
+  --muted:#776a63;
+
+  --red:#e52323;
+  --red-dark:#b90f0f;
+
+  --orange:#ff963b;
+  --line:rgba(145,100,70,.16);
 }
-*{box-sizing:border-box}
-html,body{min-height:100%}
+
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  min-height:100%;
+}
+
 body{
   margin:0;
   min-height:100vh;
   display:grid;
   place-items:center;
-  padding:16px;
+  padding:18px;
+
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+
   color:var(--text);
+
   background:
-    radial-gradient(circle at 15% 20%, rgba(255, 160, 102, 0.18), transparent 35%),
-    radial-gradient(circle at 85% 85%, rgba(255, 200, 100, 0.22), transparent 35%),
-    linear-gradient(180deg, #fffaf5, var(--bg));
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(255,255,255,.05),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 85%,
+      rgba(255,110,60,.07),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #090a0b,
+      var(--bg-dark) 45%,
+      var(--bg-dark-2)
+    );
 }
+
+/* TARJETA PRINCIPAL */
+
 .card{
   width:min(720px,100%);
   padding:28px 24px;
+
   border-radius:26px;
   text-align:center;
-  background:var(--card);
-  border:1px solid var(--line);
-  box-shadow:0 18px 45px rgba(180, 90, 30, 0.08);
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      var(--card)
+    );
+
+  border:1px solid rgba(255,255,255,.12);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.45),
+    0 0 0 1px rgba(0,0,0,.04);
 }
+
+/* MARCA */
+
 .brand{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:10px;
+  gap:11px;
   margin-bottom:18px;
 }
+
 .duck{
-  width:54px;height:54px;
-  display:grid;place-items:center;
+  width:54px;
+  height:54px;
+
+  display:grid;
+  place-items:center;
+
   border-radius:17px;
+
   font-size:31px;
-  background:linear-gradient(135deg, #ffe34e, #ff9f1a);
-  box-shadow:0 4px 12px rgba(255, 159, 26, 0.25);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe55b,
+      #ff9f1a
+    );
+
+  box-shadow:
+    0 6px 15px rgba(255,159,26,.25);
 }
+
 .brand strong{
   font-size:30px;
   letter-spacing:-.03em;
   color:var(--text);
 }
+
+/* BLOQUE INTERIOR */
+
 .game{
-  padding:22px 16px;
-  border:1px solid rgba(255, 126, 54, 0.2);
+  padding:24px 17px;
+
+  border:1px solid rgba(210,150,100,.18);
+
   border-radius:22px;
-  background:linear-gradient(180deg, rgba(255, 243, 235, 0.7), rgba(255, 248, 238, 0.5));
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf9,
+      #fff5e9
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.8);
 }
+
 .game-icon{
   font-size:52px;
   line-height:1;
 }
+
+/* TITULO */
+
 h1{
   margin:12px 0 4px;
+
   font-size:clamp(28px,6vw,46px);
+
   letter-spacing:-.04em;
   line-height:1.02;
+
   color:var(--text);
 }
+
+/* VERSION */
+
 .version{
   display:inline-block;
+
   margin:10px 0 14px;
+
   padding:8px 16px;
+
   border-radius:999px;
-  background:rgba(255, 126, 54, 0.12);
-  border:1px solid rgba(255, 126, 54, 0.25);
-  font-weight:800;
-  color:var(--accent);
+
+  background:#fff0df;
+
+  border:1px solid rgba(255,150,59,.28);
+
+  font-weight:850;
+
+  color:#d86500;
 }
+
+/* NOVEDADES */
+
 .update-info{
   margin:0 auto 20px;
+
   max-width:480px;
+
   font-size:14px;
+
   color:var(--muted);
-  line-height:1.4;
-  background:rgba(255, 255, 255, 0.7);
-  padding:10px 14px;
+
+  line-height:1.45;
+
+  background:rgba(255,255,255,.8);
+
+  padding:11px 14px;
+
   border-radius:12px;
-  border:1px dashed rgba(255, 126, 54, 0.25);
+
+  border:1px dashed rgba(210,140,90,.28);
 }
+
+/* BOTON ROJO */
+
 .btn{
   display:flex;
   align-items:center;
   justify-content:center;
+
   gap:10px;
+
   width:min(360px,100%);
+
   margin:0 auto;
+
   padding:18px 22px;
+
   border-radius:17px;
+
   text-decoration:none;
+
   font-size:20px;
+
   font-weight:950;
+
   color:#ffffff;
-  background:linear-gradient(135deg, var(--orange), var(--amber));
-  box-shadow:0 12px 28px rgba(255, 126, 54, 0.3);
-  transition:transform 0.2s ease, box-shadow 0.2s ease;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f13232,
+      var(--red)
+    );
+
+  border:1px solid rgba(150,0,0,.2);
+
+  box-shadow:
+    0 12px 28px rgba(229,35,35,.35),
+    inset 0 1px 0 rgba(255,255,255,.2);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
 }
+
 .btn:hover{
   transform:translateY(-2px);
-  box-shadow:0 16px 32px rgba(255, 126, 54, 0.38);
+
+  background:
+    linear-gradient(
+      180deg,
+      #ff3e3e,
+      #d81919
+    );
+
+  box-shadow:
+    0 17px 34px rgba(229,35,35,.45);
 }
+
+.btn:active{
+  transform:translateY(0);
+}
+
+/* TEXTO PEQUEÑO */
+
 .small{
   margin:14px 0 0;
+
   color:var(--muted);
+
   font-size:13px;
 }
+
+/* ICONOS */
+
 .icons{
   display:flex;
+
   justify-content:center;
+
   flex-wrap:wrap;
+
   gap:12px;
+
   margin-top:20px;
 }
+
 .icon{
   min-width:92px;
+
   padding:10px 12px;
+
   border:1px solid var(--line);
-  background:rgba(255, 248, 242, 0.6);
+
+  background:#fff9f2;
+
   border-radius:14px;
+
   font-size:13px;
+
   color:var(--text);
 }
+
 .icon b{
   display:block;
+
   font-size:22px;
+
   margin-bottom:3px;
 }
+
+/* PIE */
+
 footer{
   margin-top:18px;
+
   color:var(--muted);
+
   font-size:12px;
 }
+
+/* MOVIL */
+
 @media(max-width:500px){
-  .card{padding:18px 14px}
-  .brand strong{font-size:26px}
+
+  body{
+    padding:12px;
+  }
+
+  .card{
+    padding:18px 14px;
+    border-radius:22px;
+  }
+
+  .brand strong{
+    font-size:26px;
+  }
+
+  .game{
+    padding:21px 13px;
+  }
+
+  .btn{
+    font-size:19px;
+  }
 }
+
 </style>
 </head>
+
 <body>
+
 <main class="card">
+
   <div class="brand">
-    <div class="duck">🦆</div>
-    <strong>PatoNuclear</strong>
+
+    <div class="duck">
+      🦆
+    </div>
+
+    <strong>
+      PatoNuclear
+    </strong>
+
   </div>
+
 
   <section class="game">
-    <div class="game-icon">⛏️</div>
-    <h1>EL JUEGO</h1>
-    <div class="version">26.45 · Android</div>
+
+    <div class="game-icon">
+      ⛏️
+    </div>
+
+    <h1>
+      EL JUEGO
+    </h1>
+
+    <div class="version">
+      26.45 · Android
+    </div>
+
 
     <p class="update-info">
-      ✨ <strong>Novedades v26.45:</strong> Optimización de rendimiento, corrección de errores y mejoras de estabilidad general.
+
+      ✨ <strong>Novedades v26.45:</strong>
+      Optimización de rendimiento,
+      corrección de errores y mejoras
+      de estabilidad general.
+
     </p>
 
-    <a class="btn" href="https://subtounlock.app/u/paton2645" target="_blank" rel="noopener noreferrer">
-      ⬇️ CLICK AQUI
+
+    <a
+      class="btn"
+      href="https://subtounlock.app/u/paton2645"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      ⬇️ CLICK AQUÍ
+
     </a>
 
-    <p class="small">Un botón. Sin anuncios. Sin ventanas falsas.</p>
+
+    <p class="small">
+      Un botón. Sin anuncios. Sin ventanas falsas.
+    </p>
+
   </section>
 
+
   <div class="icons">
-    <div class="icon"><b>📱</b>Android</div>
-    <div class="icon"><b>⚡</b>Rápido</div>
-    <div class="icon"><b>🚫</b>Sin anuncios</div>
-    <div class="icon"><b>🛡️</b>Seguro</div>
+
+    <div class="icon">
+      <b>📱</b>
+      Android
+    </div>
+
+    <div class="icon">
+      <b>⚡</b>
+      Rápido
+    </div>
+
+    <div class="icon">
+      <b>🚫</b>
+      Sin anuncios
+    </div>
+
+    <div class="icon">
+      <b>🛡️</b>
+      Seguro
+    </div>
+
   </div>
 
-  <footer>PatoNuclear · Minecraft Bedrock 26.45</footer>
+
+  <footer>
+    PatoNuclear · Minecraft Bedrock 26.45
+  </footer>
+
 </main>
+
 </body>
 </html>
